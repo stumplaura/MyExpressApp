@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to Laura Stump's #{title}
+  form(action="/", method = "POST")
+    input(name="lead_id", type="name", placeholder="Enter your ID")
+    input(name="lead_name", type="name", placeholder="Enter your First name")
+    input(name="lead_email", type="email", placeholder="Enter your Email")
+    button(type="submit") Submit me
+  br
+
+  if leads 
+    h1(class="title") Leads
+    for lead in leads 
+      table
+        tr
+          td.lead-id <span> #{lead.id} </span> 
+          td.lead-name <span> #{lead.name} </span> 
+          td.lead-email <span> #{lead.email} </span>
+          td
+            a(href="/lead/" + lead.id)    Details from Laura Stump 
+      

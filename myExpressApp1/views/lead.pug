@@ -1,0 +1,15 @@
+extends layout
+
+block content
+    h1 Lead Display
+    table
+        tr
+            td(class="my-titleid")
+                <span> #{lead.id}</span> 
+            td(class="my-titlename")
+                <span> #{lead.name}</span> 
+            td(class="my-titleem")
+                <span> #{lead.email}</span> 
+            td(class="my-titleedit")
+                a.edit(href="/lead/" + lead.id + "/edit" ) Edit
+        
